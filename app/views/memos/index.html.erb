@@ -1,0 +1,12 @@
+    <h3>メモリスト</h3>
+    <% @memos.each do |memo| %>
+    <div class="col-sm-4">
+        <div class="panel panel-info">
+          <div class="panel-heading"><%=memo.title%></div>
+          <div class="panel-body">
+            <%=memo.body%>
+          </div>
+        </div>
+    </div>
+    <% end %>
+

@@ -1,0 +1,12 @@
+    <h3>メモ新規作成ページ</h3>
+    <%= form_tag("/create") do %>
+    <%= label_tag "form-title", "title" %>
+        <div class="form-group">
+            <%= text_field :memos, :title, id:"form-title",class:"form-control",placeholder:"title" %>
+        </div class="form-group">
+    <%= label_tag "form-content", "content" %>
+        <div class="form-group">
+            <%= text_field :memos, :body, id:"form-content",class:"form-control",placeholder:"content" %>
+        </div class="form-group">
+        <%= submit_tag "Create", class:"btn btn-primary"%>
+    <% end %>
