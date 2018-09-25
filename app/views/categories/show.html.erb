@@ -1,4 +1,5 @@
-    <h3>メモリスト</h3>
+<h3><%= @category.name %>'s memo</h3>
+
     <% @memos.each do |memo| %>
     <div class="col-sm-4">
         <div class="panel panel-info">
@@ -15,4 +16,3 @@
         </div>
     </div>
     <% end %>
-

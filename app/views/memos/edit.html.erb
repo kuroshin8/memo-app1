@@ -8,5 +8,10 @@
         <div class="form-group">
             <%= text_field :memos, :body, id:"form-content",class:"form-control",value: @memo.body %>
         </div class="form-group">
+       <div class="form-group">
+        <%= label_tag "form-category", "category" %>
+        <%= select_tag 'memos[category_id]', options_from_collection_for_select(@categories, :id, :name),id:"form-category",class:"form-control" %>
+        </div class="form-group">
+
         <%= submit_tag "Update", class:"btn btn-primary"%>
     <% end %>

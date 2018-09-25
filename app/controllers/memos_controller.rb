@@ -2,15 +2,18 @@ class MemosController < ApplicationController
     def index
         #トップページが呼ばれたときに動作するアクション
         @memos = Memo.all
+        
     end
     
     def new
-       #新規ページが呼ばれたときに動作するアクション 
+       #新規ページが呼ばれたときに動作するアクション
+       @categories = Category.all
+       
     end
     
     def create
         #新しいメモがフォームからPOSTされたときに動作するアクション
-        Memo.create(title:params["memos"]["title"], body:params["memos"]["body"])
+        Memo.create(title:params["memos"]["title"], body:params["memos"]["body"], category_id:params["memos"]["category_id"])
         redirect_to "/"
     end
     
@@ -22,6 +25,7 @@ class MemosController < ApplicationController
     
     def edit
         @memo = Memo.find(params["id"])
+        
     end
     
     def update
