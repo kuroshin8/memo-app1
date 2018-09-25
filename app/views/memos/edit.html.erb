@@ -1,0 +1,12 @@
+    <h3>Edit Memo</h3>
+    <%= form_tag("/memos/"+@memo.id.to_s,:method=>:patch) do %>
+    <%= label_tag "form-title", "title" %>
+        <div class="form-group">
+            <%= text_field :memos, :title, id:"form-title",class:"form-control",value: @memo.title %>
+        </div class="form-group">
+    <%= label_tag "form-content", "content" %>
+        <div class="form-group">
+            <%= text_field :memos, :body, id:"form-content",class:"form-control",value: @memo.body %>
+        </div class="form-group">
+        <%= submit_tag "Update", class:"btn btn-primary"%>
+    <% end %>
